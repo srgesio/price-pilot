@@ -46,7 +46,7 @@ export default function Home() {
           <p className="text-muted-foreground text-xs sm:text-sm">Calcule preços de serviços de forma dinâmica, transparente e estratégica.</p>
         </header>
 
-        <section className="flex flex-wrap gap-6 justify-center mb-4">
+        <section className="flex flex-wrap gap-4 sm:gap-6 justify-center mb-4">
           <ResultBox ref={resultRefs.base} label="Base (Custo x Horas)" value={base} prefix="R$ " strong />
           <ResultBox ref={resultRefs.extra} label="Custos extras" value={extraCosts} prefix="R$ " strong />
           <ResultBox ref={resultRefs.margin} label={`Margem (${marginPercent}%)`} value={margin} prefix="R$ " strong />
