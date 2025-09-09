@@ -46,12 +46,17 @@ export default function Home() {
           <p className="text-muted-foreground text-xs sm:text-sm">Calcule preços de serviços de forma dinâmica, transparente e estratégica.</p>
         </header>
 
-        <section className="flex flex-wrap gap-4 sm:gap-6 justify-center mb-4">
-          <ResultBox ref={resultRefs.base} label="Base (Custo x Horas)" value={base} prefix="R$ " strong />
-          <ResultBox ref={resultRefs.extra} label="Custos extras" value={extraCosts} prefix="R$ " strong />
-          <ResultBox ref={resultRefs.margin} label={`Margem (${marginPercent}%)`} value={margin} prefix="R$ " strong />
-          <ResultBox ref={resultRefs.strategic} label="Valor estratégico" value={strategicValue} prefix="R$ " strong />
-          <ResultBox ref={resultRefs.final} label="Preço final" value={finalPrice} prefix="R$ " highlight strong />
+        {/* Resultados: linha dos boxes e linha separada para o preço final */}
+        <section className="w-full">
+          <div className="flex flex-wrap gap-6 justify-center mb-6">
+            <ResultBox ref={resultRefs.base} label="Base (Custo x Horas)" value={base} prefix="R$ " strong />
+            <ResultBox ref={resultRefs.extra} label="Custos extras" value={extraCosts} prefix="R$ " strong />
+            <ResultBox ref={resultRefs.margin} label={`Margem (${marginPercent}%)`} value={margin} prefix="R$ " strong />
+            <ResultBox ref={resultRefs.strategic} label="Valor estratégico" value={strategicValue} prefix="R$ " strong />
+          </div>
+          <div className="flex justify-center w-full gap-6">
+            <ResultBox ref={resultRefs.final} label="Preço final" value={finalPrice} prefix="R$ " highlight strong />
+          </div>
         </section>
 
         <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-white/80 dark:bg-black/30 rounded-xl p-6 shadow-lg">
